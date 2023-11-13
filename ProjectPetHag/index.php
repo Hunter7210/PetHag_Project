@@ -32,6 +32,15 @@
 
         <input type="button" value="Enviar">
     </form>
+
+    
+    <h1>RESULTADO</h1>
+
+    <!--Incluindo a pagina consulta.php-->
+    <?php 
+    include 'consulta.php';
+
+    ?>
 </body>
 
 </html>
