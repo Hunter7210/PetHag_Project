@@ -11,7 +11,7 @@ $password = ''; //Senha do db
 try {
     $conexao = new PDO("mysql:host=$servername;dbname=$DBname", $user, $password);
     //Definindo o mode de eroo
-    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //Descreve o erro da conexão, não recomendado para a produção.
     echo "Conexão realizada com sucesso!";
 
 

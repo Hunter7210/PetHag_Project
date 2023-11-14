@@ -15,15 +15,18 @@ $stmt = $conexao->prepare($sql);
 $result = $stmt->execute() or die("Erro na consulta"); //die serve para parar o codigo
 
 //Para cada consulta ele ira criar uma matriz (fetchAll() = Matriz; fetch= Array simples;) com base na variavel $row
+echo '<br><h2>nome|sobrenome|datanascimento|sexo|email|cpf|celular|telefone|cep|senha</h2><br>';
 foreach ($stmt->fetchAll() as $row) {
     //Printa somente os campos desejados do banco de dados
-    echo $row['nome']."-".$row['sobrenome']."-".$row['data_nasc']."-".$row['sexo']."-".$row['email']."-".$row['cpf']."<br>"; 
+    echo $row['nome']. "|". $row['sobrenome']. "|". $row['data_nasc']. "|". $row['sexo']. "|". $row['email']. "|". $row['cpf']. "|". $row['celular']. "|". $row['telefone']. "|". $row['cep']. "|". $row['senha'];
+    echo '<hr>'; 
+    
     
     //Pegar as primeiras letras do nome e sobrenome usando uma função da string 
-    $pegarletras = strtoupper(substr($row['nome'],0,1)); //Colocando a letra maiuscula
+    /* $pegarletras = strtoupper(substr($row['nome'],0,1)); //Colocando a letra maiuscula
     $pegarletras2 = substr($row['sobrenome'],0,1);
     echo $pegarletras.$pegarletras2;
-    
+     */
     //Existem muitas funções de string veja, pois é possivle verificar se em uma string contem uma determinada expressão str_contains();
 }
 
