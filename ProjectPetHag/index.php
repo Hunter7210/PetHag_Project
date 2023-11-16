@@ -12,7 +12,8 @@
     <h1>FAÇA SEU CADASTRO</h1>
     <form action="cadastrarUsuario.php" method="POST">
         
-        
+    <input type="hidden" name="id" id="id">    
+
         <label for="">NOME:</label>
         <input type="text" name="nome" id="nome">
 
@@ -29,7 +30,7 @@
         <input type="text" name="email" id="email">
         
         <label for="">CPF:</label>
-        <input type="text" name="CPF" id="CPF">
+        <input type="text" name="cpf" id="cpf">
         
         <label for="">Celular:</label>
         <input type="tel" name="celular" id="celular">
@@ -46,17 +47,16 @@
         <input type="submit" value="Enviar">
     </form>
 
-    <input type="submit" value="Exibir" <?php
-    include 'consulta.php';
-    ?>>
+ 
 
-<input type="submit" value="excluir">
+<a href="consulta.php?consulta=execute">Exibir</a>
 
-<input type="submit" value="Atualizar">
+<a href="updateUsuarios.php?p=execute">Atualizar</a>
+
+
+<!-- 
+<input type="submit" value="Atualizar" name="updateUsuarios.php"> -->
     <!--Incluindo a pagina consulta.php-->
-    <?php
-    include 'cadastrarUsuario.php';
-    ?>
 </body>
 
 </html>
