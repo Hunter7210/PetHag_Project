@@ -14,8 +14,6 @@ $stmt = $conexao->prepare($sql);
 
 
 if(isset($_GET['p'])){
-
-
     $result = $stmt->execute() or die("Erro na consulta"); //die serve para parar o codigo
     echo "Atualização realizada com sucesso";
 } else{
