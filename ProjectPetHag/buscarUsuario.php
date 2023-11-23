@@ -4,7 +4,7 @@ session_start();
 
 //Cria as variaveis para conter os valores do campo preenchido
 $nome = $_POST['nome'];
-$senha = $_POST['senha'];
+$senha = md5($_POST['senha']);
 
 //inclui a conexão com o banco
 include ('conexaoBD.php');
@@ -17,7 +17,7 @@ if(isset($nome) && isset($senha)){
     
     //Prepara os dados para a execução
     $stmt = $conexao->prepare($sql);    
-    
+
     //Executa a a consulta
     $result= $stmt->execute();
         //Atribui a variavel linha a linha de onde foi inserido a consulta 
