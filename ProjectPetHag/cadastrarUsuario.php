@@ -21,10 +21,12 @@ if(isset($_POST['nome'])&& isset($_POST['nome'])){
     
      echo "TEST";
      
-     $stmt->execute(array($_POST['nome'], $_POST['sobreNome'], $_POST['datnasc'], $_POST['sexo'], $_POST['email'], $_POST['cpf'], $_POST['celular'], $_POST['telefone'], $_POST['cep'], md5($_POST['senha']))); //Executar o codigo
+     $stmt->execute(array($_POST['nome'], $_POST['sobreNome'], $_POST['datnasc'], $_POST['sexo'], $_POST['email'], $_POST['cpf'], $_POST['celular'], $_POST['telefone'], $_POST['cep'], password_hash($_POST['senha'] ,PASSWORD_DEFAULT))); //Executar o codigo
     echo "inserido com sucesso";
     header("Location: login.php");
     $cadastradoSuce = true;
+
+    
 }else{
     echo "<br> Implementar novos dados falhou";
 }
