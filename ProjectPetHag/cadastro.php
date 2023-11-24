@@ -44,7 +44,7 @@
         <label for="">SENHA:</label>
         <input type="password" name="senha" id="senha">
 
-        <input type="submit" value="Enviar">
+        <input type="submit" name="submit" value="Enviar">
     </form>
 
 
