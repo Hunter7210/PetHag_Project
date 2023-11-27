@@ -48,16 +48,6 @@
     </form>
 
 
-    <?php
-    if ($cadastradoSuce == true) {
-    ?>
-        <div class="sucesso">
-            <h1>Sucesso CADASTRO</h1>
-        </div>
-    <?php
-    }
-    ?>
-
     <a href="consulta.php?consulta=execute">Exibir</a>
 
     <a href="updateUsuarios.php?p=execute">Atualizar</a>

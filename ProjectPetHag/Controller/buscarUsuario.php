@@ -6,8 +6,8 @@
 $nome = $_POST['nome'];
 $senha = $_POST['senha'];
 
-
-include_once("cadastrarUsuario.php");
+/* 
+include_once("cadastrarUsuario.php"); */
 //inclui a conexão com o banco
 include('conexaoBD.php');
 
@@ -19,9 +19,9 @@ if (isset($nome) && isset($senha)) {
     //Prepara os dados para a execução
     $stmt = $conexao->prepare($sql);
     //Atribuindo os valores do sql para minhas variaveis
-    $stmt->bindValue('nome', $nome,PDO::PARAM_STR);
-    $stmt->bindValue('email', $nome,PDO::PARAM_STR);
-    $stmt->bindValue('senha', $senha,PDO::PARAM_STR);
+    $stmt->bindValue(':nome', $nome,PDO::PARAM_STR);
+    $stmt->bindValue(':email', $nome,PDO::PARAM_STR);
+    $stmt->bindValue(':senha', $senha,PDO::PARAM_STR);
 
     //Executa a a consulta
     $result = $stmt->execute();
