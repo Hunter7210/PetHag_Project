@@ -10,10 +10,9 @@
 <body>
 
     <h1>FAÇA SEU CADASTRO</h1>
-    <form action="cadastrarUsuario.php" method="POST">
+    <form action="./cadastrarUsuario.php" method="POST">
 
-        <input type="hidden" name="id" id="id">
-
+      
         <label for="">NOME:</label>
         <input type="text" name="nome" id="nome">
 
@@ -48,15 +47,7 @@
     </form>
 
 
-    <?php
-    if ($cadastradoSuce == true) {
-    ?>
-        <div class="sucesso">
-            <h1>Sucesso CADASTRO</h1>
-        </div>
-    <?php
-    }
-    ?>
+
 
     <a href="consulta.php?consulta=execute">Exibir</a>
 
