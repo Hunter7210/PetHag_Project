@@ -47,8 +47,11 @@
     </form>
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2bf0744974049e2b74617721d9b786e12efdfb17
     <a href="consulta.php?consulta=execute">Exibir</a>
 
     <a href="updateUsuarios.php?p=execute">Atualizar</a>
