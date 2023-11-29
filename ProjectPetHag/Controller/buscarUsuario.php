@@ -2,7 +2,6 @@
 //Armazena os dados de forma temporaria
 session_start();
 
-
 //Cria as variaveis para conter os valores do campo preenchido
 $nome = $_POST['nomeLogin'];
 
@@ -39,16 +38,16 @@ if (isset($nome) && isset($senha)) {
         if (password_verify($senha, $linha['senha'])) {
             //Senha correta
             //Armazena de forma temporária os valores dos campos da linha
-            $_SESSION['nome'] = $linha['nome'];
-            $_SESSION['sobrenome'] = $linha['sobrenome'];
-            $_SESSION['data_nasc'] = $linha['data_nasc'];
+            /* $_SESSION['nome'] = $linha['nome'];
+            $_SESSION['sobreNome'] = $linha['sobrenome'];
+            $_SESSION['datnasc'] = $linha['data_nasc'];
             $_SESSION['sexo'] = $linha['sexo'];
             $_SESSION['email'] = $linha['email'];
             $_SESSION['cpf'] = $linha['cpf'];
             $_SESSION['celular'] = $linha['celular'];
             $_SESSION['telefone'] = $linha['telefone'];
-            $_SESSION['idpf'] = $linha['idpf'];
-            /* $_SESSION['senha'] = $linha['senha']; */
+            $_SESSION['idpf'] = $linha['idpf']; */
+            
 
             //Encaminha o usuario para a pagina de login
             /* header("Location: index.php"); */

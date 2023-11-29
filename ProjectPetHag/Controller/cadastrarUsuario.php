@@ -1,6 +1,6 @@
 <?php
-//Iniciando a sessao
-session_start();
+/* //Iniciando a sessao
+session_start(); */
 
 if (isset($_POST['submit'])) {
     //Incluindo a conexão com o banco de dados

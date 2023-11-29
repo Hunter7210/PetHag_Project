@@ -2,15 +2,18 @@
 
 session_start();
 
-include ("conexaoBD.php");
+include ("../Connection/conexaoBD.php");
 
-$sql = "DELETE FROM pessoafisica WHERE idpf='id'";
+$sql = "DELETE FROM pessoafisica WHERE idpf=':id'";
 $id = (int)$_POST['delete'];
+
 
 if(isset($_POST['delete'])){
     
     $stmt = $conexao->prepare($sql);
-    $stmt->bindValue('idpf', $id);
+
+    $stmt->bindValue(':id', $id);
+
     $stmt->execute();
 
     echo "DELETADO COM SUCESSO";

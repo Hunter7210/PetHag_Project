@@ -2,9 +2,9 @@
 
 session_start();
 
-include "conexaoBD.php";
+include "../Connection/conexaoBD.php";
 
-$sql = "UPDATE pessoafisica SET nome='Max' WHERE idpf='3'";
+$sql = "UPDATE pessoafisica SET nome=':nome' WHERE idpf=':id'";
 
 //Variavel para conter o cod SQL ja preparado para realizar a consulta
 $stmt = $conexao->prepare($sql);
