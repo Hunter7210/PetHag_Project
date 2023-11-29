@@ -1,12 +1,11 @@
 <?php
 
 //Inclui a pagina de conexãoBD.php, no caso a pagina de conexão com o banco de dados
-include ("conexaoBD.php");
+include ("../Connection/conexaoBD.php");
 
 $teste = "pessoafisica";
 //Codigo SQL para consultar toda a tabela pessoafisica
 $sql =  "SELECT * FROM $teste;";
-
 
 //Variavel para conter o cod SQL ja preparado para realizar a consulta
 $stmt = $conexao->prepare($sql);

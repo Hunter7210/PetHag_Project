@@ -8,15 +8,15 @@
 <body>
     <h1>Entrar</h1>
 
-    <form action="buscarUsuario.php" method="post">
+    <form action="../Controller/buscarUsuario.php" method="POST">
 
     <label for="">Usuario ou Email</label>
-    <input type="text" name="nome" id="nome">
+    <input type="text" name="nomeLogin" id="nome">
 
     <label for="">Senha</label>
-    <input type="password" name="senha" id="senha">
+    <input type="password" name="senhaLogin" id="senha">
 
-    <input type="submit" name="enviar" id="enviar">
+    <input type="submit" name="enviarLogin" id="enviar">
     </form>
 
 </body>

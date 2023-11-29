@@ -10,9 +10,8 @@
 <body>
 
     <h1>FAÇA SEU CADASTRO</h1>
-    <form action="./cadastrarUsuario.php" method="POST">
-
-      
+    <form action="../Controller/cadastrarUsuario.php" method="POST">
+    
         <label for="">NOME:</label>
         <input type="text" name="nome" id="nome">
 
@@ -26,7 +25,7 @@
         <input type="text" name="sexo" id="sexo">
 
         <label for="">Email:</label>
-        <input type="text" name="email" id="email">
+        <input type="email" name="email" id="email">
 
         <label for="">CPF:</label>
         <input type="text" name="cpf" id="cpf">
@@ -46,15 +45,9 @@
         <input type="submit" name="submit" value="Enviar">
     </form>
 
+    <a href="../Controller/consulta.php">Exibir</a>
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 2bf0744974049e2b74617721d9b786e12efdfb17
-    <a href="consulta.php?consulta=execute">Exibir</a>
-
-    <a href="updateUsuarios.php?p=execute">Atualizar</a>
+    <a href="../Controller/updateUsuarios.php">Atualizar</a>
 
 
     <!-- </form>
