@@ -8,7 +8,7 @@ $nome = $_POST['nomeLogin'];
 $senha = $_POST['senhaLogin'];
 
 //inclui a conexão com o banco
-include("../Connection/conexaoBD.php");
+include_once("../Connection/conexaoBD.php");
 //Cria o codigo SQL a ser executado 
 $sql = "SELECT idusu,senha FROM usuario WHERE nome=:nome";
 
@@ -30,27 +30,25 @@ if (isset($nome) && isset($senha)) {
     //Verifica se a linha inserida existe
     if ($linha) {
         // Verifica se a senha fornecida coincide com o hash no banco de dados
-        echo $senha;
         ?>
         "<br>"
         <?php
-        echo $linha['senha'];
-        if (password_verify($senha, $linha['senha'])) {
+        if (password_verify($senha, $linha['senha'])) { 
             //Senha correta
             //Armazena de forma temporária os valores dos campos da linha
-            /* $_SESSION['nome'] = $linha['nome'];
-            $_SESSION['sobreNome'] = $linha['sobrenome'];
+            $_SESSION['nome'] = $linha['nome'];
+            $_SESSION['sobrenome'] = $linha['sobrenome'];
             $_SESSION['datnasc'] = $linha['data_nasc'];
             $_SESSION['sexo'] = $linha['sexo'];
             $_SESSION['email'] = $linha['email'];
             $_SESSION['cpf'] = $linha['cpf'];
             $_SESSION['celular'] = $linha['celular'];
             $_SESSION['telefone'] = $linha['telefone'];
-            $_SESSION['idpf'] = $linha['idpf']; */
-            
+            $_SESSION['idusu'] = $linha['idusu'];
+        
 
             //Encaminha o usuario para a pagina de login
-            /* header("Location: index.php"); */
+            header("Location:../index.php");
             echo "Usuario existe";
             exit(); // Importante para evitar execução adicional do código
         } else {
@@ -70,7 +68,8 @@ if (isset($nome) && isset($senha)) {
         echo "Usuario não existe";
         
         /* echo $_POST['email']; */
-        echo $nome;
-        echo $senha;
+       /*  echo $nome;
+        echo $senha; */
     }
+    
 }

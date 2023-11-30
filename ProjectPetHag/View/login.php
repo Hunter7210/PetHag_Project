@@ -6,7 +6,7 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Entrar</h1>
+    <h1>Faça seu login:</h1>
 
     <form action="../Controller/buscarUsuario.php" method="POST">
 
@@ -18,6 +18,12 @@
 
     <input type="submit" name="enviarLogin" id="enviar">
     </form>
+
+    <?php 
+    if($existe) {
+        
+    }
+    ?>
 
 </body>
 </html>
