@@ -1,3 +1,7 @@
+<?php 
+    require_once "../Controller/functions.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +23,6 @@
     <input type="submit" name="enviarLogin" id="enviar">
     </form>
 
-    <?php 
-    if($existe) {
-        
-    }
-    ?>
 
 </body>
 </html>

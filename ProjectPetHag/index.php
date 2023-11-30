@@ -22,6 +22,10 @@
 
     <a type="button" id="cadastro" name="cadastro" href="./View/cadastro.php">cadastrar</a>
 
+    
+    <a href="Controller/exibirBanco.php">Exibir</a>
+
+    <a href="Controller/updateUsuarios.php">Atualizar</a>
 
 </body>
 

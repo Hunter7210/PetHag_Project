@@ -4,7 +4,7 @@ session_start();
 
 include "../Connection/conexaoBD.php";
 
-$sql = "UPDATE pessoafisica SET nome=':nome' or sobrenome=':sobreNome' or data_nasc=':datanasc' WHERE idusu=':id'";
+$sql = "UPDATE usuario SET nome=':nome' or sobrenome=':sobreNome' or data_nasc=':datanasc' WHERE idusu=':id'";
 
 //Variavel para conter o cod SQL ja preparado para realizar a consulta
 $stmt = $conexao->prepare($sql);

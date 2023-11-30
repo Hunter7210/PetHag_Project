@@ -45,9 +45,6 @@
         <input type="submit" name="submit" value="Enviar">
     </form>
 
-    <a href="../Controller/consulta.php">Exibir</a>
-
-    <a href="../Controller/updateUsuarios.php">Atualizar</a>
 
 
     <!-- </form>
