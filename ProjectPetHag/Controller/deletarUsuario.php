@@ -4,7 +4,7 @@ session_start();
 
 include ("../Connection/conexaoBD.php");
 
-$sql = "DELETE FROM pessoafisica WHERE idpf=':id'";
+$sql = "DELETE FROM usuario WHERE idpf=':id'";
 $id = (int)$_POST['delete'];
 
 

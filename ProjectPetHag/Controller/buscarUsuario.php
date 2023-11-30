@@ -10,7 +10,7 @@ $senha = $_POST['senhaLogin'];
 //inclui a conexão com o banco
 include("../Connection/conexaoBD.php");
 //Cria o codigo SQL a ser executado 
-$sql = "SELECT idpf,senha FROM pessoafisica WHERE nome=:nome";
+$sql = "SELECT idusu,senha FROM usuario WHERE nome=:nome";
 
 //Verifica se os campos estão vazios
 if (isset($nome) && isset($senha)) {
@@ -54,7 +54,7 @@ if (isset($nome) && isset($senha)) {
             echo "Usuario existe";
             exit(); // Importante para evitar execução adicional do código
         } else {
-            echo "Senha incorreta";
+            echo "Usuário ou Senha incorreta";
         }
     } else {
         unset($_SESSION['nome']);

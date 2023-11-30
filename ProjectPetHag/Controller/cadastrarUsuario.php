@@ -10,10 +10,9 @@ if (isset($_POST['submit'])) {
     //Pegando o resultado do input nome no form com o metodo POST 
     /* $nome = mysqli_real_escape_string($conexaoBD, trim($_POST['nome'])); */
 
-    $sql = "INSERT INTO pessoafisica (idpf, nome, sobrenome, data_nasc, sexo, email, cpf, celular, telefone, cep, senha) VALUES (null, :nome, :sobrenome, :data_nasc, :sexo, :email, :cpf, :celular, :telefone, :cep, :senha)";
+    $sql = "INSERT INTO usuario (idusu, nome, sobrenome, data_nasc, sexo, email, cpf, cnpj, celular, telefone, cep, senha) VALUES (null, :nome, :sobrenome, :data_nasc, :sexo, :email, :cpf, :cnpj, :celular, :telefone, :cep, :senha)";
 
     //Inserir dados no banco
-
 
     $cadastradoSuce = false;
 
@@ -26,6 +25,7 @@ if (isset($_POST['submit'])) {
         $sexo = $_POST['sexo'];
         $email = $_POST['email'];
         $cpf = $_POST['cpf'];
+        $cnpj = null;
         $celular = $_POST['celular'];
         $telefone = $_POST['telefone'];
         $cep = $_POST['cep'];
@@ -40,6 +40,7 @@ if (isset($_POST['submit'])) {
         $stmt->bindValue(':sexo', $sexo);
         $stmt->bindValue(':email', $email);
         $stmt->bindValue(':cpf', $cpf);
+        $stmt->bindValue(':cnpj', $cnpj);
         $stmt->bindValue(':celular', $celular);
         $stmt->bindValue(':telefone', $telefone);
         $stmt->bindValue(':cep', $cep);
