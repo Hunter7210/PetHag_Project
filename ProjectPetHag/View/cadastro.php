@@ -1,3 +1,8 @@
+<?php 
+ require_once "../Controller/functions.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +15,7 @@
 <body>
 
     <h1>FAÇA SEU CADASTRO</h1>
-    <form action="../Controller/cadastrarUsuario.php" method="POST">
+    <form action="../Controller/functions.php" method="POST">
     
         <label for="">NOME:</label>
         <input type="text" name="nome" id="nome">
@@ -41,15 +46,18 @@
 
         <label for="">SENHA:</label>
         <input type="password" name="senha" id="senha">
+        
+        <label for="">CONFIRMAR SENHA:</label>
+        <input type="password" name="confirSenha" id="confirSenha">
 
         <input type="submit" name="submit" value="Enviar">
     </form>
+<?php
+    if($_POST['submit']) {
+        cadastrarUsuar($conexao);
+    }
 
-
-
-    <!-- </form>
-<input type="submit" value="Atualizar" name="updateUsuarios.php"> -->
-    <!--Incluindo a pagina consulta.php-->
+?>
 </body>
 
 </html>

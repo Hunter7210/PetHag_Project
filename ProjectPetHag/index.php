@@ -24,7 +24,7 @@
     <br>
     <a type="button" id="cadastro" name="cadastro" href="./View/cadastro.php">cadastrar</a>
     <br>
-    <a href="Controller/exibirBanco.php">Exibir</a>
+    <a href="./View/usuarios.php">Exibir</a>
     <br>
     <a href="Controller/updateUsuarios.php">Atualizar</a>
     <br>
