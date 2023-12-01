@@ -10,7 +10,7 @@ $senha = $_POST['senhaLogin'];
 //inclui a conexão com o banco
 include_once("../Connection/conexaoBD.php");
 //Cria o codigo SQL a ser executado 
-$sql = "SELECT idusu,senha FROM usuario WHERE nome=:nome";
+$sql = "SELECT * FROM usuario WHERE nome=:nome";
 
 //Verifica se os campos estão vazios
 if (isset($nome) && isset($senha)) {

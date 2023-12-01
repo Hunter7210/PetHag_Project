@@ -7,16 +7,10 @@ if (isset($_POST['submit'])) {
 
     include("../Connection/conexaoBD.php");
 
-    //Pegando o resultado do input nome no form com o metodo POST 
-    /* $nome = mysqli_real_escape_string($conexaoBD, trim($_POST['nome'])); */
-
     $sql = "INSERT INTO usuario (idusu, nome, sobrenome, data_nasc, sexo, email, cpf, cnpj, celular, telefone, cep, senha) VALUES (null, :nome, :sobrenome, :data_nasc, :sexo, :email, :cpf, :cnpj, :celular, :telefone, :cep, :senha)";
 
     //Inserir dados no banco
 
-    $cadastradoSuce = false;
-
-    echo "TPASSOU";
     if (isset($_POST['nome']) && isset($_POST['nome'])) {
 
         $nome = $_POST['nome'];
@@ -45,21 +39,16 @@ if (isset($_POST['submit'])) {
         $stmt->bindValue(':telefone', $telefone);
         $stmt->bindValue(':cep', $cep);
         $stmt->bindValue(':senha', $hash_armazena);
-
-        echo "TEST";
         
         $stmt->execute(); //Executar o codigo
         echo "inserido com sucesso";
 
         header("Location: ../View/login.php");
-        $cadastradoSuce = true;
     } else {
         echo "<br> Implementar novos dados falhou";
     }
 
 
-    //Fechar a conexão
-    /* $stmt -> closeCursor(); */
-    //Limpa a variavel 
+    //Fechar a conexão 
     $conexao = null;
 }
