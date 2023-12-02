@@ -8,6 +8,7 @@
     <title>Site teste!</title>
 
 </head>
+
 <body>
 
     <?php
@@ -22,13 +23,18 @@
     <br>
     <a type="button" id="login" name="login" href="./View/login.php">login</a>
     <br>
-    <a type="button" id="cadastro" name="cadastro" href="./View/cadastro.php">cadastrar</a>
+    <a type="button" id="cadastro" name="cadastro" href="./View/cadastroUsua.php">Cadastrar Usuario</a>
+    <br>
+    <a href="./Controller/logout.php">Sair</a>
+    <br>
+    <br>
+    <br>
+    <a type="button" id="cadastro" name="cadastro" href="./View/cadastroEmpre.php">Cadastrar Parceiro</a>
     <br>
     <a href="./View/usuarios.php">Exibir</a>
     <br>
     <a href="Controller/updateUsuarios.php">Atualizar</a>
-    <br>
-    <a href="./Controller/logout.php">Sair</a>
+
 
 </body>
 
