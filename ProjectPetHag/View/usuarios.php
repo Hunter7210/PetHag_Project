@@ -1,4 +1,4 @@
-<?php require_once "../Controller/functions.php"
+<?php require_once "../Controller/functions.php";
 
 ?>
 
@@ -37,22 +37,20 @@
                 <?php
                 $tabela = "usuario";
                 $users = buscarAll($conexao, $tabela);
-                
-                if(isset($_GET['idusu'])) {
-                    echo '<div class=conferir> <h2>Deseja realmente deletar o usuario"</h2> 
-                    <input type="button" name="sim" value="Sim">'
-                    ?>
-                    <form action="" method="post">
-                        <input type="hidden" name="idusu" value="<?php echo $_GET['idusu']?>">    
-                        <input type="submit" value="Deletar" name="deletar">
-                        </form>
-                   <?php };
+
+                if (isset($_GET['idusu'])) {
+                    echo '<div class=conferir> <h2>Deseja realmente deletar o usuario"</h2>'
                 ?>
-                <?php 
-                if(isset($_POST['deleter'])){
+                    <form action="" method="post">
+                        <input type="hidden" name="idusu" value="<?php echo $_GET['idusu'] ?>">
+                        <input type="submit" value="Deletar" name="deletarUsu">
+                    </form>
+                <?php };
+                ?>
+                <?php
+                if (isset($_POST['deletarUsu'])) {
                     deletarUsu($conexao, "usuario", "idusu", $_POST['idusu']);
                 }
-
                 ?>
                 <style>
                     thead {

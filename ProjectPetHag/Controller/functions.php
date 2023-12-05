@@ -230,7 +230,7 @@ function deletarUsu($conexao, $tabela, $nomeID, $idbusc)
 {
 
     if (!empty($idbusc)) {
-        $sqlDel = "DELETE FROM $tabela WHERE $nomeID = " . (int) $idbusc;
+        $sqlDel = "DELETE FROM $tabela WHERE $nomeID= " . (int) $idbusc;
         $buscaEmail = $conexao->prepare($sqlDel);
         $result = $buscaEmail->execute();
 
