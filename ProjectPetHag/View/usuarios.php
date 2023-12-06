@@ -39,16 +39,15 @@
                 $users = buscarAll($conexao, $tabela);
 
                 if (isset($_GET['idusu'])) {
-                    echo '<div class=conferir> <h2>Deseja realmente deletar o usuario"</h2>'
+                    echo '<div class="conferir"> <h2>Deseja realmente deletar o usuario"</h2>'
                 ?>
                     <form action="" method="post">
                         <input type="hidden" name="idusu" value="<?php echo $_GET['idusu'] ?>">
-                        <input type="submit" value="Deletar" name="deletarUsu">
+                        <input type="submit" value="Deletar" name="deletarusu">
                     </form>
-                <?php };
-                ?>
+                <?php } ?>
                 <?php
-                if (isset($_POST['deletarUsu'])) {
+                if (isset($_POST['deletarusu'])) {
                     deletarUsu($conexao, "usuario", "idusu", $_POST['idusu']);
                 }
                 ?>
@@ -76,7 +75,7 @@
                         <td> <?php echo $row['telefone']; ?></td>
                         <td> <?php echo $row['cep']; ?></td>
                         <td> <?php echo $row['senha']; ?></td>
-                        <td> <a href="usuarios.php?idusu=<?php echo $row['idusu']; ?>">Excluir</a></td>;
+                        <td> <a href="./usuarios.php?idusu=<?php echo $row['idusu']; ?>">Excluir</a></td>;
                     </tr>
                 <?php endforeach; ?>
             </tbody>

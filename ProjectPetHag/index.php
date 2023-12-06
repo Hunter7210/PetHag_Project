@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site teste!</title>
 
+    <link rel="stylesheet" href="./View/Style/adm-style.css">
 </head>
 
 <body>
@@ -35,8 +36,16 @@
     <br>
     <a href="Controller/updateUsuarios.php">Atualizar</a>
 
+    <div class="divContendoChat" id="divContendoChatPequeno" onclick="alternarDivMaior()">
+    <img src="./View/img/chatbot.png" alt="ChatBot PetHag!" class="Chat">
+</div>
+
+<div class="divContendoChat divContendoChatGrande" id="divChatGrande">
+    <iframe class="ChatGrande" width="150" height="130" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/c2d0d9ae-9759-45ad-8056-d535d5cea3e5"></iframe>
+   
+</div>
+
 
 </body>
-
-
+<script src="./View/Script/index_script.js"></script>
 </html>
