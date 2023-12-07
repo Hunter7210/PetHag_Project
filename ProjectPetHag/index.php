@@ -24,7 +24,7 @@
     <br>
     <a type="button" id="login" name="login" href="./View/login.php">login</a>
     <br>
-    <a type="button" id="cadastro" name="cadastro" href="./View/cadastroUsua.php">Cadastrar Usuario</a>
+    <a type="button" id="cadastro" name="cadastro" href="./View/Cadastro.php">Cadastrar Usuario</a>
     <br>
     <a href="./Controller/logout.php">Sair</a>
     <br>
