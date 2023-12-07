@@ -149,7 +149,7 @@ function cadastrarUsuar($conexao)
             }
         } else {
             foreach ($erros as $erro) {
-                echo "'<div> <h2>' . $erro . '</h2></div>'";
+                echo"'<div class='diverro'>' . $erro . '</div>'";
             }
         }
     }
@@ -175,7 +175,7 @@ function cadastrarEmpre($conexao)
         $linha = $buscaEmail->fetchAll(PDO::FETCH_ASSOC);
 
         if (!empty($linha)) {
-            $erros[] = "Email ja cadastrado!" . "<br>" . "<h3>Só é permitido um unico email por usuario!</h3>";
+            $erros[] = "Email ja cadastrado!<br><h3>Só é permitido um unico email por usuario!</h3>";
         }
 
         if (empty($erros)) {
