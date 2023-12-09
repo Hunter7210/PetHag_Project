@@ -2,10 +2,10 @@
 
 //Definindo as variaveis para conexão com o banco de dados
 
-$servername = "127.0.0.1;port=3306"; //O nome do servidor
-/* 
-$servername = "127.0.0.1;port=3307"; //O nome do servidor
+/* $servername = "127.0.0.1;port=3306"; //O nome do servidor
  */
+$servername = "127.0.0.1;port=3307"; //O nome do servidor
+
 $user = "root"; //O nome do usuario do banco de dados
 $dbName = 'pethagdboficial'; //O nome do meu banco de dados
 $password = ""; //Senha do db
