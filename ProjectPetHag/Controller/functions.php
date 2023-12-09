@@ -85,73 +85,76 @@ function buscarAll($conexao, $tabela, $order = "", $where = 1)
 
 function cadastrarUsuar($conexao)
 {
+    if (isset($_POST['botao'])) {
+        if (isset($_POST['nome']) && isset($_POST["cpf"])) {
+            $erros = array();
+            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 
-    if (isset($_POST['nome']) && isset($_POST["cpf"])) {
-        $erros = array();
-        $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+            if ($_POST['senha'] != $_POST['confirSenha']) {
+                $erros[] = "As senhas devem ser iguais!";
+            }
 
-        if ($_POST['senha'] != $_POST['confirSenha']) {
-            $erros[] = "As senhas devem ser iguais!";
-        }
+            //Pode conter apenas um usuario por email
+            $sqlemail = "SELECT * FROM usuario WHERE email= :email";
+            $buscaEmail = $conexao->prepare($sqlemail);
+            $buscaEmail->bindValue(':email', $email);
 
-        //Pode conter apenas um usuario por email
-        $sqlemail = "SELECT * FROM usuario WHERE email= :email";
-        $buscaEmail = $conexao->prepare($sqlemail);
-        $buscaEmail->bindValue(':email', $email);
+            $buscaEmail->execute();
 
-        $buscaEmail->execute();
+            $linha = $buscaEmail->fetchAll(PDO::FETCH_ASSOC);
 
-        $linha = $buscaEmail->fetchAll(PDO::FETCH_ASSOC);
+            if (!empty($linha)) {
+                $erros[] = "Email ja cadastrado!" . "<br>" . "<h3>Só é permitido um unico email por usuario!</h3>";
+            }
 
-        if (!empty($linha)) {
-            $erros[] = "Email ja cadastrado!" . "<br>" . "<h3>Só é permitido um unico email por usuario!</h3>";
-        }
+            if (empty($erros)) {
+                //Inserir
+                $sql = "INSERT INTO usuario (idusu, nome, sobrenome, data_nasc, sexo, email, cpf, cnpj, celular, telefone, cep, senha) VALUES (null, :nome, :sobrenome, :data_nasc, :sexo, :email, :cpf, :cnpj, :celular, :telefone, :cep, :senha)";
 
-        if (empty($erros)) {
-            //Inserir
-            $sql = "INSERT INTO usuario (idusu, nome, sobrenome, data_nasc, sexo, email, cpf, cnpj, celular, telefone, cep, senha) VALUES (null, :nome, :sobrenome, :data_nasc, :sexo, :email, :cpf, :cnpj, :celular, :telefone, :cep, :senha)";
+                if (isset($_POST['nome']) && isset($_POST['nome'])) {
 
-            if (isset($_POST['nome']) && isset($_POST['nome'])) {
+                    $nome = $_POST['nome'];
+                    $sobreNome = $_POST['sobreNome'];
+                    $datnasc = $_POST['datnasc'];
+                    $sexo = $_POST['sexo'];
+                    $email = $_POST['email'];
+                    $cpf = $_POST['cpf'];
+                    $cnpj = null;
+                    $celular = $_POST['celular'];
+                    $telefone = $_POST['telefone'];
+                    $cep = $_POST['cep'];
+                    //Usando hash para armazenar e criotgrafar a senha
+                    $hash_armazena = password_hash($_POST['senha'], PASSWORD_BCRYPT);
 
-                $nome = $_POST['nome'];
-                $sobreNome = $_POST['sobreNome'];
-                $datnasc = $_POST['datnasc'];
-                $sexo = $_POST['sexo'];
-                $email = $_POST['email'];
-                $cpf = $_POST['cpf'];
-                $cnpj = null;
-                $celular = $_POST['celular'];
-                $telefone = $_POST['telefone'];
-                $cep = $_POST['cep'];
-                //Usando hash para armazenar e criotgrafar a senha
-                $hash_armazena = password_hash($_POST['senha'], PASSWORD_BCRYPT);
+                    //Null porque o valor já é auto incremento
+                    $stmt = $conexao->prepare($sql);
+                    $stmt->bindValue(':nome', $nome);
+                    $stmt->bindValue(':sobrenome', $sobreNome);
+                    $stmt->bindValue(':data_nasc', $datnasc);
+                    $stmt->bindValue(':sexo', $sexo);
+                    $stmt->bindValue(':email', $email);
+                    $stmt->bindValue(':cpf', $cpf);
+                    $stmt->bindValue(':cnpj', $cnpj);
+                    $stmt->bindValue(':celular', $celular);
+                    $stmt->bindValue(':telefone', $telefone);
+                    $stmt->bindValue(':cep', $cep);
+                    $stmt->bindValue(':senha', $hash_armazena);
 
-                //Null porque o valor já é auto incremento
-                $stmt = $conexao->prepare($sql);
-                $stmt->bindValue(':nome', $nome);
-                $stmt->bindValue(':sobrenome', $sobreNome);
-                $stmt->bindValue(':data_nasc', $datnasc);
-                $stmt->bindValue(':sexo', $sexo);
-                $stmt->bindValue(':email', $email);
-                $stmt->bindValue(':cpf', $cpf);
-                $stmt->bindValue(':cnpj', $cnpj);
-                $stmt->bindValue(':celular', $celular);
-                $stmt->bindValue(':telefone', $telefone);
-                $stmt->bindValue(':cep', $cep);
-                $stmt->bindValue(':senha', $hash_armazena);
+                    $stmt->execute(); //Executar o codigo
+                    echo "inserido com sucesso";
 
-                $stmt->execute(); //Executar o codigo
-                echo "inserido com sucesso";
-
-                header("Location: ../View/login.php");
+                    header("Location: ../View/login.php");
+                } else {
+                    echo "ERRO ao inserir com sucesso";
+                }
             } else {
-                echo "ERRO ao inserir com sucesso";
-            }
-        } else {
-            foreach ($erros as $erro) {
-                echo"'<div class='diverro'>' . $erro . '</div>'";
+                foreach ($erros as $erro) {
+                    echo "'<div class='diverro'>' . $erro . '</div>'";
+                }
             }
         }
+    } else {
+        echo "Por favor preencha os campos";
     }
 }
 function cadastrarEmpre($conexao)
