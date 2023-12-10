@@ -90,7 +90,6 @@ function cadastrarUsuar($conexao)
             $erros = array();
             $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 
-<<<<<<< HEAD
             if ($_POST['senha'] != $_POST['confirSenha']) {
                 $erros[] = "As senhas devem ser iguais!";
             }
@@ -144,66 +143,6 @@ function cadastrarUsuar($conexao)
                     $stmt->execute(); //Executar o codigo
                     echo "inserido com sucesso";
 
-=======
-    if (isset($_POST['botao'])) {
-        if (isset($_POST['nome']) && isset($_POST["cpf"])) {
-            $erros = array();
-            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
-
-            if ($_POST['senha'] != $_POST['confirSenha']) {
-                $erros[] = "As senhas devem ser iguais!";
-            }
-
-            //Pode conter apenas um usuario por email
-            $sqlemail = "SELECT * FROM usuario WHERE email= :email";
-            $buscaEmail = $conexao->prepare($sqlemail);
-            $buscaEmail->bindValue(':email', $email);
-
-            $buscaEmail->execute();
-
-            $linha = $buscaEmail->fetchAll(PDO::FETCH_ASSOC);
-
-            if (!empty($linha)) {
-                $erros[] = "Email ja cadastrado!" . "<br>" . "<h3>Só é permitido um unico email por usuario!</h3>";
-            }
-
-            if (empty($erros)) {
-                //Inserir
-                $sql = "INSERT INTO usuario (idusu, nome, sobrenome, data_nasc, sexo, email, cpf, cnpj, celular, telefone, cep, senha) VALUES (null, :nome, :sobrenome, :data_nasc, :sexo, :email, :cpf, :cnpj, :celular, :telefone, :cep, :senha)";
-
-                if (isset($_POST['nome']) && isset($_POST['nome'])) {
-
-                    $nome = $_POST['nome'];
-                    $sobreNome = $_POST['sobreNome'];
-                    $datnasc = $_POST['datnasc'];
-                    $sexo = $_POST['sexo'];
-                    $email = $_POST['email'];
-                    $cpf = $_POST['cpf'];
-                    $cnpj = null;
-                    $celular = $_POST['celular'];
-                    $telefone = $_POST['telefone'];
-                    $cep = $_POST['cep'];
-                    //Usando hash para armazenar e criotgrafar a senha
-                    $hash_armazena = password_hash($_POST['senha'], PASSWORD_BCRYPT);
-
-                    //Null porque o valor já é auto incremento
-                    $stmt = $conexao->prepare($sql);
-                    $stmt->bindValue(':nome', $nome);
-                    $stmt->bindValue(':sobrenome', $sobreNome);
-                    $stmt->bindValue(':data_nasc', $datnasc);
-                    $stmt->bindValue(':sexo', $sexo);
-                    $stmt->bindValue(':email', $email);
-                    $stmt->bindValue(':cpf', $cpf);
-                    $stmt->bindValue(':cnpj', $cnpj);
-                    $stmt->bindValue(':celular', $celular);
-                    $stmt->bindValue(':telefone', $telefone);
-                    $stmt->bindValue(':cep', $cep);
-                    $stmt->bindValue(':senha', $hash_armazena);
-
-                    $stmt->execute(); //Executar o codigo
-                    echo "inserido com sucesso";
-
->>>>>>> dcdb681bcc5c2a3f9e7da14d7e33a55fdaab812d
                     header("Location: ../View/login.php");
                 } else {
                     echo "ERRO ao inserir com sucesso";
@@ -304,4 +243,10 @@ function deletarUsu($conexao, $tabela, $nomeID, $idbusc)
             echo "Erro ao deletar!";
         }
     }
+}
+
+
+
+function cadastrarProd($conexao){
+    
 }
