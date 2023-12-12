@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.button-container {
+    position: relative;
+}
+
+.hover-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.hover-button:hover::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -50px; /* metade da largura da imagem */
+    width: 100px; /* largura da imagem */
+    height: 100px; /* altura da imagem */
+    background-image: url('/PetHag/img/3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+}
