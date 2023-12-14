@@ -500,7 +500,7 @@ button {
     grid-template-rows: repeat(2, 20vh);
     gap: 2%;
     width: 80%;
-   
+
 }
 
 .conted-marcaApo img {
@@ -515,7 +515,7 @@ button {
 
 
 
-.container-sobrenos{
+.container-sobrenos {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -530,7 +530,7 @@ button {
     display: flex;
     color: #252525;
     text-align: justify;
-   /*  justify-content: center;
+    /*  justify-content: center;
     align-items: center;
     align-content: center; */
     flex-direction: column;
@@ -538,13 +538,14 @@ button {
 }
 
 .projetosLinks h1 {
-   /*  font-family: "Schibsted Grotesk Black"; */
-   text-align: justify;
+    /*  font-family: "Schibsted Grotesk Black"; */
+    text-align: justify;
     margin: 0px;
     font: 900;
     font-size: 45px;
-    margin-bottom:3%;
+    margin-bottom: 3%;
 }
+
 /* 
 .projetosLinks p {
     margin: 0px;
@@ -552,12 +553,12 @@ button {
 
 .projetosLinks h6 {
     font-size: x-large;
-    font-weight:600;
+    font-weight: 600;
 
     margin: 0px;
 }
 
-#vejamais{
+#vejamais {
     font-size: 30px;
     color: #333333;
 }
@@ -733,6 +734,55 @@ body {
     width: 100%;
     height: auto;
 }
+
+.container-card-pets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    margin-top: 4%;
+}
+
+.card-pets {
+    width: 90%;
+    height: 78vh;
+
+
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    gap: 1%;
+
+    background-color: #ffffff;
+
+}
+
+.card-desing {
+    background-color: #ffffff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.card-desing img {
+    border-radius: 10px;
+    width: 100%;
+    height: 55vh;
+    background-color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Cards styling */
 /* .cards {
