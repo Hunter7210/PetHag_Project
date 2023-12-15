@@ -66,7 +66,7 @@
             <div class="nav-2">
                 <ul>
                     <li><a href="./index.php"><button>HOME</button></a></li>
-                    <li><a href=""><button>PRODUTO</button></a></li>
+                    <li><a href="./View/Html/produtos.html"><button>PRODUTO</button></a></li>
                     <li><a href="./View/login.php"><button>LOGIN</button></a></li>
                     <li><a href="#link1"><button>SOBRE NÓS</button></a></li>
                 </ul>
