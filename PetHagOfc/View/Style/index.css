@@ -885,3 +885,271 @@ body {
 .by a:hover {
     text-decoration: underline;
 }
+
+
+/* Adicione estas regras para a largura de tela até 780 pixels */
+
+@media screen and (max-width: 780px) {
+  .container {
+    height: auto;
+  }
+
+  .img-nav {
+    width: 100%;
+    height: auto;
+  }
+
+  .img-nav img {
+    height: auto;
+  }
+
+  .flex {
+    height: auto;
+  }
+
+  header ul li {
+    font-size: 16px;
+  }
+
+  .banner h1 {
+    font-size: 1.5em;
+  }
+
+  .img-Meio {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .nav-2 ul li button {
+    font-size: 12px;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-input {
+    flex: 1;
+  }
+
+  .center li img {
+    height: 3vh;
+  }
+
+  .carousel-container,
+  .carousel,
+  .slide img {
+    height: auto;
+  }
+
+  .prev img,
+  .next img {
+    width: 5vh;
+  }
+
+  .tit {
+    height: auto;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(2, 48%);
+  }
+
+  .card-image img {
+    height: auto;
+  }
+
+  .price {
+    font-size: 3vh;
+  }
+
+  .buy-button {
+    font-size: 16px;
+  }
+
+  .banner2 h1 {
+    font-size: 1.5em;
+  }
+
+  .conted-marcaApo {
+    grid-template-columns: repeat(2, 48%);
+  }
+
+  .conted-marcaApo img {
+    height: auto;
+  }
+
+  .projetosLinks h1 {
+    font-size: 30px;
+  }
+
+  #vejamais {
+    font-size: 20px;
+  }
+
+  .card-pets {
+    grid-template-columns: 100%;
+  }
+
+  .card-desing img {
+    height: auto;
+  }
+
+  .container-img-banner,
+  .contain-img-ban,
+  .contain-div-pra-grid,
+  .img-banner1 img,
+  .img-banner2 img,
+  .img-banner3 img {
+    height: auto;
+  }
+
+  .divContendoChatGrande {
+    display: block;
+  }
+
+  #divContendoChatPequeno img {
+    height: 10vh;
+  }
+
+  #divChatGrande,
+  .ChatGrande {
+    height: auto;
+  }
+}
+
+/* Adicione estas regras para a largura de tela até 780 pixels */
+
+@media screen and (max-width: 780px) {
+    .container {
+      height: auto;
+    }
+  
+    .img-nav {
+      width: 80%; /* Ajuste a largura conforme necessário */
+      height: auto;
+    }
+  
+    .img-nav img {
+      width: 100%; /* Assegura que a imagem ocupe toda a largura da div */
+      height: auto;
+    }
+  
+    .flex {
+      height: auto;
+    }
+  
+    header ul li {
+      font-size: 16px;
+    }
+  
+    .banner h1 {
+      font-size: 1.5em;
+    }
+  
+    .img-Meio {
+      grid-template-columns: repeat(2, 50%);
+    }
+  
+    .nav-2 ul li button {
+      font-size: 12px;
+    }
+  
+    .search-bar {
+      width: 100%;
+    }
+  
+    .search-input {
+      flex: 1;
+    }
+  
+    .center li img {
+      height: 3vh;
+    }
+  
+    .carousel-container,
+    .carousel,
+    .slide img {
+      max-width: 100%; /* Evita que as imagens ultrapassem seus contêineres */
+      height: auto;
+    }
+  
+    .prev img,
+    .next img {
+      width: 5vh;
+    }
+  
+    .tit {
+      height: auto;
+    }
+  
+    .card-container {
+      grid-template-columns: repeat(2, 48%);
+    }
+  
+    .card-image img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .price {
+      font-size: 3vh;
+    }
+  
+    .buy-button {
+      font-size: 16px;
+    }
+  
+    .banner2 h1 {
+      font-size: 1.5em;
+    }
+  
+    .conted-marcaApo {
+      grid-template-columns: repeat(2, 48%);
+    }
+  
+    .conted-marcaApo img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .projetosLinks h1 {
+      font-size: 30px;
+    }
+  
+    #vejamais {
+      font-size: 20px;
+    }
+  
+    .card-pets {
+      grid-template-columns: 100%;
+    }
+  
+    .card-desing img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .container-img-banner,
+    .contain-img-ban,
+    .contain-div-pra-grid,
+    .img-banner1 img,
+    .img-banner2 img,
+    .img-banner3 img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .divContendoChatGrande {
+      display: block;
+    }
+  
+    #divContendoChatPequeno img {
+      height: 10vh;
+    }
+  
+    #divChatGrande,
+    .ChatGrande {
+      height: auto;
+    }
+  }
+  
