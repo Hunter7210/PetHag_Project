@@ -66,7 +66,7 @@ require_once "../Controller/functions.php";
 
 
                 <div class="button-wrapper">
-                    <a href="Login.html"><button type="button" onclick="window.location.href='Cadastro.html'">Voltar</button></a>
+                    <a href="../View/login.php"><button type="button" onclick="window.location.href='login.php'">Voltar</button></a>
                     <input type="submit" value="Avançar" name="botao" id="botao">
                 </div>
             </form>

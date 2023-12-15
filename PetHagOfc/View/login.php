@@ -34,10 +34,10 @@ if (isset($_POST['enviarLogin'])) {
                 <input type="password" name="senhaLogin" id="senha" placeholder="Digite sua senha">
 
                 <div class="button-wrapper">
-                    <a href="../index.php"> <button type="submit">Voltar</button></a>
+                    <a href="../index.php"> <button type="button">Voltar</button></a>
                     
                     
-                    <a href="./Index.html"> <button type="submit"
+                    <a href="../index.html"> <button type="submit"
                             <?php ?>>Avançar</button></a>
                 </div>
 

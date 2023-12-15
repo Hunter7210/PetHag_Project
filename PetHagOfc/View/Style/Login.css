@@ -98,6 +98,7 @@ button:hover {
 
 .contain-img {
     width: 20%;
+    height: 65vh;
     display: flex;
     align-items: center;
 }
@@ -196,18 +197,6 @@ button:hover {
 .cad li {
     display: inline;
 }
-
-.contain-img {
-    width: 100%;
-    max-width: 400px; /* Ajuste conforme necessário */
-}
-
-.contain-img img {
-    width: 100%;
-    height: auto;
-    border-bottom-right-radius: 50px;
-}
-
 /* Adiciona regras de mídia para telas menores */
 @media screen and (max-width: 768px) {
     .login {
